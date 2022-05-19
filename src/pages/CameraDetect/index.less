@@ -1,0 +1,65 @@
+@import '~antd/es/style/variable.less';
+
+.card {
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .switch:before {
+    content: " ";
+    display: block;
+    padding-top: 59%; /*利用padding来撑开*/
+  }
+  .switch {
+    flex: 1;
+    margin-right: 10px;
+    //height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    -moz-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    background-image: url('../../../public/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .switch-row{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+  }
+  .video {
+    flex: 1;
+    margin-left: 10px;
+    border-radius: 20px;
+    -webkit-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    -moz-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+  }
+}
+
+@media (max-width: @screen-md) {
+  .page-container {
+    .switch {
+      margin: 0 0 20px 0;
+    }
+
+    .video {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+
+
