@@ -5,6 +5,7 @@ import { InboxOutlined } from '@ant-design/icons';
 import { detectVideo } from '@/services/detect';
 
 const { Dragger } = Upload;
+import '../CameraDetect/index.less';
 import './index.less';
 
 const VideoDetect = () => {
@@ -39,7 +40,7 @@ const VideoDetect = () => {
       console.log(res);
       if (res.code === 0) {
         message.success(`检测完成`);
-        setVideoSource('/api/video-result');
+        setVideoSource('/api/result/video');
       }
     } else {
       message.error('请先上传视频');
@@ -48,27 +49,29 @@ const VideoDetect = () => {
 
   return (
     <PageContainer>
-      <Card>
-        <div className="uploader">
-          <Dragger {...draggerProps} className="dragger">
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined />
-            </p>
-            <p className="ant-upload-text">点击或拖拽视频至此区域以上传</p>
-            {/*<p className="ant-upload-hint">仅支持 JPG 或 PNG 格式的文件</p>*/}
-          </Dragger>
-          <Button
-            type="primary"
-            shape="round"
-            size="large"
-            className="uploader-detect-btn"
-            onClick={detect}
-          >
-            开始检测
-          </Button>
+      <div className="card">
+        <div className="page-container">
+          <div className="uploader">
+            <Dragger {...draggerProps} className="dragger">
+              <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+              </p>
+              <p className="ant-upload-text">点击或拖拽视频至此区域以上传</p>
+              {/*<p className="ant-upload-hint">仅支持 JPG 或 PNG 格式的文件</p>*/}
+            </Dragger>
+            <Button
+              type="primary"
+              shape="round"
+              size="large"
+              className="uploader-detect-btn"
+              onClick={detect}
+            >
+              开始检测
+            </Button>
+          </div>
+          {videoSource.length > 0 && <video className="video" controls src={videoSource}></video>}
         </div>
-        {videoSource.length > 0 && <video className="video" controls src={videoSource}></video>}
-      </Card>
+      </div>
     </PageContainer>
   );
 };

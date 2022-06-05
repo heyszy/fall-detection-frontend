@@ -12,8 +12,10 @@ export default () => {
 
   const success = async (pos) => {
     const { coords } = pos;
+    console.log(coords);
     const { longitude, latitude } = coords;
-    const param = longitude + ',' + latitude;
+    // const param = longitude + ',' + latitude;
+    const param = '120.20000,30.26667';
     let city = await getCurrentCity(param);
     setCity(city);
     let weather = await getCurrentWeather(param);
@@ -21,8 +23,10 @@ export default () => {
   };
 
   const error = (err) => {
+    console.log(err);
     console.warn('ERROR(' + err.code + '): ' + err.message);
   };
+
   const getLocationInfo = useCallback(async () => {
     if ('geolocation' in navigator) {
       /* 地理位置服务可用 */

@@ -2,25 +2,19 @@
 
 .card {
   padding: 20px;
-  background-color: white;
+  background-color: rgba(256, 256, 256, 0.5);
   border-radius: 20px;
 }
 
 .page-container {
-  max-width: 1200px;
+  max-width: 640px;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  //display: flex;
+  //justify-content: space-between;
+  //flex-wrap: wrap;
 
-  .switch:before {
-    content: " ";
-    display: block;
-    padding-top: 59%; /*利用padding来撑开*/
-  }
   .switch {
-    flex: 1;
-    margin-right: 10px;
+    //margin-right: 10px;
     //height: 100%;
     padding: 20px;
     border-radius: 20px;
@@ -34,25 +28,25 @@
     .switch-row{
       display: flex;
       justify-content: space-between;
-      margin-bottom: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #d3d3d3;
     }
 
-  }
-  .video {
-    flex: 1;
-    margin-left: 10px;
-    border-radius: 20px;
-    -webkit-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
-    -moz-box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
-    box-shadow: 6px 6px 15px -1px rgba(110,110,110,0.5);
+    .switch-row:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
   }
 }
 
 @media (max-width: @screen-md) {
   .page-container {
-    .switch {
-      margin: 0 0 20px 0;
-    }
+    //.switch {
+    //  margin: 0 0 20px 0;
+    //}
 
     .video {
       width: 100%;

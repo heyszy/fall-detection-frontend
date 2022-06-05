@@ -1,7 +1,7 @@
 import { request } from 'umi';
 
 export async function detectVideo(options) {
-  return request('/api/detect-video', {
+  return request('/api/FD/video', {
     method: 'GET',
     ...(options || {}),
   });
